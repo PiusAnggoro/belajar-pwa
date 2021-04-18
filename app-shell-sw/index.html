@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>My First PWA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <meta name="theme-color" content="#00897B"/>
+</head>
+
+<body>
+  <nav class="teal lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">My App</a>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger">&#9776;</a>
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul id="nav-mobile" class="sidenav"></ul>
+    </div>
+  </nav>
+
+  <div class="body-content container"></div>
+
+  <script src="js/materialize.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('appshell-sw.js')
+          .then(function(registration) {
+              console.log('Pendaftaran ServiceWorker berhasil');
+          })
+          .catch(function(error) {
+              console.log('Pendaftaran ServiceWorker gagal');
+          });
+      }
+  </script>
+</body>
+</html>
